@@ -31,7 +31,6 @@ public class CreateBookFragment extends Fragment {
     public CreateBookFragment() {
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

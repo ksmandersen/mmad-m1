@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dk.itu.mmad.bookshelf" >
 
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="19" />
+    <uses-sdk android:minSdkVersion="11" />
 
     <application
         android:allowBackup="true"
