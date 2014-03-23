@@ -15,7 +15,7 @@ public class Book {
     public static final int NOT_INSERTED_ID = -1;
 
     public static Book create(Context context) {
-        return BookManager.getSharedInstance(context).insert(new Book());
+        return BookManager.getSharedInstance(context).insertBook(new Book());
     }
 
     public Book() {
@@ -25,4 +25,5 @@ public class Book {
     public void setId(long newId) {
         _id = newId;
     }
+    public long getId() { return _id; }
 }

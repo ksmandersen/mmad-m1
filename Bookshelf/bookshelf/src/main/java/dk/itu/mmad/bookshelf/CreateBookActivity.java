@@ -1,9 +1,11 @@
 package dk.itu.mmad.bookshelf;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,18 +13,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
-public class CreateBookActivity extends ActionBarActivity {
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
+public class CreateBookActivity extends SingleFragmentActivity {
+    private CreateBookFragment fragment;
+    @Override
+    protected Fragment createFragment() {
+        fragment = new CreateBookFragment();
+        return fragment;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_book);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new CreateBookFragment())
-                    .commit();
-        }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        fragment.onActivityResult(requestCode, resultCode, data);
     }
 
 }

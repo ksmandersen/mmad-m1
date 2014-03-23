@@ -16,21 +16,31 @@
         android:text="@string/textView_create_book_header"
         android:id="@+id/textView_new_book_header" />
 
-    <EditText
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:id="@+id/create_book_title_field"
-        android:hint="Title"
-        android:inputType="textCapWords"/>
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:layout_marginRight="2dp"
+            android:id="@+id/create_book_title_field"
+            android:hint="Title"
+            android:inputType="textCapWords"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:id="@+id/create_book_author_field"
-        android:inputType="textCapWords"
-        android:hint="Author"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/create_book_author_field"
+            android:inputType="textCapWords"
+            android:hint="Author"/>
+
+        </LinearLayout>
+
+
 
     <EditText
         android:layout_width="match_parent"
@@ -48,18 +58,24 @@
         android:hint="Number of pages"
         android:inputType="number"/>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <Button
         android:id="@+id/button_new_book_scan"
-        android:layout_margin="4dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="@string/button_scan" />
 
     <Button
         android:id="@+id/button_create_book_submit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
         android:text="@string/button_submit"/>
 
+    </LinearLayout>
 </LinearLayout>

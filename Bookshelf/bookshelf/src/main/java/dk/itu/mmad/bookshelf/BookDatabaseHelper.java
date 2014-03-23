@@ -49,6 +49,10 @@ public class BookDatabaseHelper extends SQLiteOpenHelper {
         return getWritableDatabase().insert(TABLE_NAME, null, values);
     }
 
+    public int deleteBook(Book book) {
+        return getWritableDatabase().delete(TABLE_NAME, COL_ID + " = ?", new String[]{String.valueOf(book.getId())});
+    }
+
     public BookCursor queryBook(long id) {
         Cursor cursor = getReadableDatabase()
                 .query(TABLE_NAME,

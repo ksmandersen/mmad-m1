@@ -25,9 +25,13 @@ public class BookManager {
         helper = new BookDatabaseHelper(context);
     }
 
-    public Book insert(Book book) {
+    public Book insertBook(Book book) {
         book.setId(helper.insertBook(book));
         return book;
+    }
+
+    public void removeBook(Book book) {
+        helper.deleteBook(book);
     }
 
     public Book getBook(long id) {
